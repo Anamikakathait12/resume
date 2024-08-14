@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamika Kathait</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="photo_2024-01-28_13-47-56.jpg" type="image/jpeg">
+    <script src="https://kit.fontawesome.com/905fb7966c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo" alt="no image found">
+                <ul id="sidemenu">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About </a></li>
+                    <li><a href="#achieve">Achievements</a></li>
+                    <li><a href="#connect">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Front-End Developer</p>
+                <h1>Hey! I am <span>Anamika <br>Kathait!</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- about********* -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="abt-col1">
+                    <img src="1000113840-04.jpeg" alt="no image">
+                </div>
+                <div class="abt-col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        An enthusiastic and motivated learner coupled with practical skills currently pursuing BTech in
+                        the field of Computer Science and Engineering!! <br>
+                        A highly motivated individual, seeking opportunities as a Front-End Developer. With a strong
+                        foundation in data structures and algorithms, as well as proficiency in programming languages
+                        such as C and C++, I am well-equipped to tackle front-end development projects. I am eager to
+                        apply my technical skills and knowledge to contribute to innovative web solutions and enhance
+                        user experiences.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <!-- <p class="tab-links" onclick="opentab('experience')">Experience</p> -->
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents 
+                     skill-tab" id="skills">
+                        <ul>
+                            <li>
+                                <span>Programming Languages</span>
+                                <br>HTML
+                                <br>CSS
+                                <br>JavaScript
+                                
+                            </li>
+                            <li><span>Libraries</span>
+                                <br>React
+                                <br>jQuery
+                            </li>
+                            <li><span>Frameworks</span>
+                                <br>Bootstrap
+                               
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Experience1</span><br>web develeopment</li>
+                            <li><span>Exp2</span><br>app development</li>
+                            <li><span>Exp3</span><br>graphic designing</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2022-current</span><br>BTech(CSE)</li>
+                            <li><span>2021</span><br>Inter-School</li>
+                            <li><span>2019</span><br>High-School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------------Achievements------------------------------------------->
+    <div id="achieve">
+        <div class="container">
+            <h1 class="sub-title"><u>Achievements</u></h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="work1.jpeg" alt="no image found">
+                    <div class="layer">
+                        <h3>National Hackathon 2022-2023</h3>
+                        <p>Attained first prize worth Rs.55000 in the "Nathional Hacathon" organized by COER, Roorkee
+                        </p>
+                        <a
+                            href="https://www.linkedin.com/posts/anamika-kathait-475a6926b_connections-project-engineering-activity-7060955372974424064-TSKk?utm_source=share&utm_medium=member_desktop"><i
+                                class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work2.jpeg" alt="no image found">
+                    <div class="layer">
+                        <h3>Hackathon 2023-2024</h3>
+                        <p>Won a consolation prize worth Rs. 20000 in the 'Hacathon' organized by DBU, Dehradun.</p>
+                        <a href=""><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------------connect-------------------------------------------- -->
+    <div id="connect">
+        <div class="container">
+            <div class="row">
+                <div class="con-left">
+                    <h1 class="sub-title">Contact Me!</h1>
+                    <p><i class="fa-solid fa-envelope"></i>anamikakathait3@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>7085158647</p>
+                    <div class="social-icons">
+                        <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
+                        <a href="http://instagram.com"><i class="fab fa-brands fa-square-instagram"></i></a>
+                        <a href="http://twitter.com"><i class="fab fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/anamika-kathait-475a6926b/"><i
+                                class="fab fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <!-- yahan pe cv ka pdf dalenge -->
+                    <a href="CV_2024081420312636.pdf" download class="btn btn2">D☻wnl☻ad  CV</a>
+                </div>
+                <div class="con-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="your message!!"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Anamika <i class="fa-solid fa-face-smile"></i></p>
+        </div>
+    </div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("skill-tab");
+
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("skill-tab");
+        }
+
+
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px ";
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyUkqBP8gevWOzgX9lwwsh4xhplVEyEF5a5jRKNrECyHOyWjwqlyEchB5KEiMuGYHh9/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg");
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent Successfully!!"
+                    setTimeout(function () {
+                        msg.innerHTML = " "
+                    }, 3000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+
+</html>
