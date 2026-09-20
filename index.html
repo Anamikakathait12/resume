@@ -4,254 +4,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anamika Kathait</title>
+    <title>Anamika Kathait | Full-Stack Developer</title>
+    <meta name="description"
+        content="Portfolio of Anamika Kathait, a BTech CSE graduate building full-stack apps with Python, Flask, React and PostgreSQL.">
+    <meta name="theme-color" content="#2a1745">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="photo_2024-01-28_13-47-56.jpg" type="image/jpeg">
     <script src="https://kit.fontawesome.com/905fb7966c.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
+    <div id="progress" aria-hidden="true"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <!-- ===================== HERO (your home photo is unchanged) ===================== -->
     <div id="header">
         <div class="container">
-            <nav>
-                <img src="logo.png" class="logo" alt="no image found">
+            <nav id="topnav">
+                <img src="logo.png" class="logo" alt="Anamika Kathait logo">
                 <ul id="sidemenu">
-
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About </a></li>
-                    <li><a href="#projects">Projects </a></li>
-                    <li><a href="#achieve">Achievements</a></li>
-                    <li><a href="#connect">Contact</a></li>
-                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
-
+                    <li><a href="#header" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#achieve" class="nav-link">Achievements</a></li>
+                    <li><a href="#connect" class="nav-link nav-cta">Contact</a></li>
+                    <button class="menu-close" onclick="closemenu()" aria-label="Close menu"><i
+                            class="fa-solid fa-circle-xmark"></i></button>
                 </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                <button class="menu-open" onclick="openmenu()" aria-label="Open menu"><i
+                        class="fa-solid fa-bars"></i></button>
             </nav>
+
             <div class="header-text">
-                <p><b>Web-Developer</b></p>
+                <p class="role-pill"><span class="dot"></span> Web Developer &middot; Open to entry-level roles</p>
                 <h1>Hey! I am <span>Anamika <br>Kathait!</span></h1>
+                <p class="typing-line">I build <span id="typed"></span><span class="caret"></span></p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">See my projects</a>
+                    <a href="#connect" class="btn btn-ghost">Get in touch</a>
+                </div>
             </div>
         </div>
+        <a href="#about" class="scroll-cue" aria-label="Scroll to About section"><span></span></a>
     </div>
-    <!------------------------------------- about********* -->
+
+    <!-- ===================== ABOUT ===================== -->
     <div id="about">
         <div class="container">
             <div class="row">
                 <div class="abt-col1">
-                    <img src="1000113840-04.jpeg" alt="no image">
+                    <div class="photo-frame">
+                        <img src="me.png" alt="Anamika Kathait">
+                    </div>
                 </div>
                 <div class="abt-col2">
                     <h1 class="sub-title">About Me</h1>
+                    <p class="lead">
+                        A motivated Computer Science and Engineering graduate (BTech) with a strong foundation in data
+                        structures and algorithms, and hands-on experience building full-stack applications using
+                        Python, Flask, React, PostgreSQL, and modern web technologies.
+                    </p>
                     <p>
-                        An enthusiastic and motivated learner coupled with practical skills currently pursuing BTech in
-                        the field of Computer Science and Engineering!! <br>
-                        A highly motivated individual, seeking opportunities as a Front-End Developer. With a strong
-                        foundation in data structures and algorithms, as well as proficiency in programming languages
-                        such as C and C++, I am well-equipped to tackle front-end development projects. I am eager to
-                        apply my technical skills and knowledge to contribute to innovative web solutions and enhance
-                        user experiences.
+                        I am actively seeking an entry-level opportunity as a Full-Stack Developer where I can apply my
+                        technical skills across both front-end and back-end development to solve real-world problems,
+                        while continuously learning from experienced mentors and evolving technologies. I believe in
+                        growing alongside the organizations I work with, contributing fresh ideas and dedicated effort
+                        while building the practical expertise needed to become a valuable long-term asset to the team.
                     </p>
 
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <!-- <p class="tab-links" onclick="opentab('experience')">Experience</p> -->
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <div class="stats">
+                        <div class="stat"><b data-count="3">0</b><span>Full-stack projects</span></div>
+                        <div class="stat"><b data-count="7.75" data-decimals="2">0</b><span>BTech CGPA</span></div>
+                        <div class="stat"><b data-count="1" data-prefix="#">0</b><span>National hackathon win</span>
+                        </div>
                     </div>
-                    <div class="tab-contents 
-                     skill-tab" id="skills">
-                        <ul>
+
+                    <div class="tab-titles" role="tablist">
+                        <button class="tab-links active-link" role="tab" aria-selected="true" data-tab="skills"
+                            onclick="opentab('skills', this)">Skills</button>
+                        <button class="tab-links" role="tab" aria-selected="false" data-tab="education"
+                            onclick="opentab('education', this)">Education</button>
+                    </div>
+
+                    <div class="tab-contents skill-tab" id="skills" role="tabpanel">
+                        <div class="skill-group">
+                            <h3>Programming languages</h3>
+                            <div class="chips">
+                                <span>C / C++</span><span>JavaScript</span><span>Python</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3>Technical tools &amp; skills</h3>
+                            <div class="chips">
+                                <span>Data Structures &amp; Algorithms</span><span>Flask</span><span>React.js</span>
+                                <span>REST API Design</span><span>Node.js</span><span>VS Code</span>
+                                <span>Git &amp; GitHub</span>
+                            </div>
+                        </div>
+                        <div class="skill-group">
+                            <h3>Soft skills</h3>
+                            <div class="chips soft">
+                                <span>Problem solving</span><span>Teamwork &amp; collaboration</span>
+                                <span>Quick learner</span><span>Adaptability</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-contents" id="education" role="tabpanel">
+                        <ol class="timeline">
                             <li>
-                                <span>Programming Languages</span>
-                                <br>C/C++
-                                <br>SQL
-                                <br>Python
-
+                                <span class="year">2022 - 2026</span>
+                                <strong>BTech, Computer Science &amp; Engineering</strong>
+                                <em>7.75 CGPA</em>
                             </li>
-                            <li><span>Technical Tools & Skills</span>
-                                <br>Data Structures and Algorithms
-                                <br>Front-End
-                                <br>VS Code
-                                <br>Git & GitHub
+                            <li>
+                                <span class="year">2021</span>
+                                <strong>Intermediate (Inter-School)</strong>
+                                <em>96.8%</em>
                             </li>
-                            <li><span>Soft Skills</span>
-                                <br>Problem-Solving Ability
-                                <br>Teamwork and Collaboration
-                                <br>Quick Learning Ability
-                                <br>Adaptability
-                                <br>
+                            <li>
+                                <span class="year">2019</span>
+                                <strong>High School</strong>
+                                <em>95.2%</em>
                             </li>
-
-                        </ul>
-                    </div>
-
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2022-current</span><br>BTech - CSE 7.59 CGPA</li>
-                            <li><span>2021</span><br>Inter-School 96.8%</li>
-                            <li><span>2019</span><br>High-School 95.4%</li>
-                        </ul>
+                        </ol>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- -----------Projects Section (Text Based) ----------- -->
+    <!-- ===================== PROJECTS ===================== -->
     <div id="projects">
         <div class="container">
             <h1 class="sub-title">My Projects</h1>
+            <p class="section-intro">Three things I built end to end. Each one links to the code on GitHub.</p>
             <div class="project-list">
 
-                <!-- Project Card 1 -->
                 <div class="project-card">
-                    <i class="fa-solid fa-code"></i>
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
                     <h2>Plagiarism Checker</h2>
                     <p>An AI-powered academic integrity platform built with Python and Flask. It features a dual-layer
                         plagiarism engine that performs live internet scraping via the Tavily API and peer-to-peer
                         document cross-checking. The system synthesizes scan results using Google Gemini AI to generate
-                        automated, plain-English executive reports for educators. </p>
+                        automated, plain-English executive reports for educators.</p>
                     <div class="project-tags">
                         <span>Python 3</span>
-                        <span>Flask/ Flask-login</span>
+                        <span>Flask / Flask-Login</span>
                         <span>SQLite3</span>
-                        <span>Front-End/ Back-End</span>
-
-                        <span></span>
+                        <span>Front-End / Back-End</span>
                     </div>
                     <a href="https://github.com/Anamikakathait12/Plagiarism_checker.git" target="_blank"
-                        class="project-link">View Code <i class="fa-solid fa-arrow-right"></i></a>
+                        rel="noopener" class="project-link">View code <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Project Card 2 -->
                 <div class="project-card">
-                    <i class="fa-solid fa-cloud-sun"></i>
-                    <h2> AI-Therapy-Chatbot</h2>
-                    <p>Designed an AI therapy assistant aimed at bridging the gap in mental health accessibility. By utilizing sentiment analysis, the bot identifies emotional distress and offers personalized coping strategies. The project focuses on creating a safe, non-judgmental space for users to express themselves, featuring a "Soft Minimalist" UI to reduce user anxiety during interactions.</p>
+                    <div class="card-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                    <h2>AI Therapy Chatbot</h2>
+                    <p>Designed an AI therapy assistant aimed at bridging the gap in mental health accessibility. By
+                        utilizing sentiment analysis, the bot identifies emotional distress and offers personalized
+                        coping strategies. The project focuses on creating a safe, non-judgmental space for users to
+                        express themselves, featuring a "Soft Minimalist" UI to reduce user anxiety during
+                        interactions.</p>
                     <div class="project-tags">
                         <span>API</span>
                         <span>JSON</span>
                         <span>CSS Grid</span>
                     </div>
                     <a href="https://github.com/Anamikakathait12/AI-Therapy-Chatbot.git" target="_blank"
-                        class="project-link">View Code <i class="fa-solid fa-arrow-right"></i></a>
+                        rel="noopener" class="project-link">View code <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
 
-
+                <div class="project-card">
+                    <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h2>Campus Lost &amp; Found</h2>
+                    <p>An intelligent lost-and-found platform built for college campuses, combining a Flask REST API
+                        with a React frontend. The system automatically detects potential matches between lost and
+                        found items using a dual-signal engine: TF-IDF cosine similarity for text and OpenCV ORB
+                        feature matching for photos. It replaces manual scrolling through WhatsApp groups and notice
+                        boards with an automated, scored matching workflow.</p>
+                    <div class="project-tags">
+                        <span>Python / Flask</span>
+                        <span>React / Tailwind CSS</span>
+                        <span>PostgreSQL</span>
+                        <span>OpenCV</span>
+                        <span>JWT Auth</span>
+                    </div>
+                    <a href="https://github.com/Anamikakathait12/campus-lost-found.git" target="_blank"
+                        rel="noopener" class="project-link">View code <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
 
             </div>
         </div>
     </div>
 
-    <!------------------------------Achievements------------------------------------------->
+    <!-- ===================== ACHIEVEMENTS ===================== -->
     <div id="achieve">
         <div class="container">
-            <h1 class="sub-title"><u>Achievements</u></h1>
+            <h1 class="sub-title">Achievements</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="work1.jpeg" alt="no image found">
+                    <div class="work-img">
+                        <img src="work1.jpeg" alt="National Hackathon award photo">
+                        <span class="badge">1st prize &middot; Rs. 55,000</span>
+                    </div>
                     <div class="layer">
                         <h3>National Hackathon 2022-2023</h3>
-                        <p>Attained first prize worth Rs.55000 in the "Nathional Hacathon" organized by COER, Roorkee
-                        </p>
-                        <a
-                            href="https://www.linkedin.com/posts/anamika-kathait-475a6926b_connections-project-engineering-activity-7060955372974424064-TSKk?utm_source=share&utm_medium=member_desktop"><i
-                                class="fa-solid fa-link"></i></a>
+                        <p>Attained first prize worth Rs. 55,000 in the National Hackathon organized by COER,
+                            Roorkee.</p>
+                        <a href="https://www.linkedin.com/posts/anamika-kathait-475a6926b_connections-project-engineering-activity-7060955372974424064-TSKk?utm_source=share&utm_medium=member_desktop"
+                            target="_blank" rel="noopener" class="project-link">View LinkedIn post <i
+                                class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="work">
-                    <img src="work2.jpeg" alt="no image found">
+                    <div class="work-img">
+                        <img src="work2.jpeg" alt="Hackathon consolation prize photo">
+                        <span class="badge">Consolation prize &middot; Rs. 20,000</span>
+                    </div>
                     <div class="layer">
                         <h3>Hackathon 2023-2024</h3>
-                        <p>Won a consolation prize worth Rs. 20000 in the 'Hacathon' organized by DBU, Dehradun.</p>
-                        <a href=""><i class="fa-solid fa-link"></i></a>
+                        <p>Won a consolation prize worth Rs. 20,000 in the Hackathon organized by DBU, Dehradun.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-    <!-- -------------------------------connect-------------------------------------------- -->
+
+    <!-- ===================== CONTACT ===================== -->
     <div id="connect">
         <div class="container">
-            <div class="row">
+            <h1 class="sub-title">Contact Me</h1>
+            <p class="section-intro">I am looking for an entry-level Full-Stack Developer role. Say hello.</p>
+            <div class="row contact-row">
                 <div class="con-left">
-                    <h1 class="sub-title">Contact Me!</h1>
-                    <p><i class="fa-solid fa-envelope"></i>anamikakathait3@gmail.com</p>
-                    <p><i class="fa-solid fa-phone"></i>7617514068</p>
-                    <div class="social-icons">
-                        <a href="http://facebook.com"><i class="fab fa-facebook"></i></a>
-                        <a href="http://instagram.com"><i class="fab fa-brands fa-square-instagram"></i></a>
-                        <a href="http://twitter.com"><i class="fab fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.linkedin.com/in/anamika-kathait-475a6926b/"><i
-                                class="fab fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <!-- yahan pe cv ka pdf dalenge -->
-                    <a href="ANAMIKA_RE.pdf" download class="btn btn2">Download Resume</a>
+                    <a class="contact-card" href="mailto:anamikakathait3@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div><small>Email</small><span>anamikakathait3@gmail.com</span></div>
+                    </a>
+                    <a class="contact-card" href="tel:+917617514068">
+                        <i class="fa-solid fa-phone"></i>
+                        <div><small>Phone</small><span>7617514068</span></div>
+                    </a>
+                    <a class="contact-card" href="https://www.linkedin.com/in/anamika-kathait-475a6926b/"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin"></i>
+                        <div><small>LinkedIn</small><span>anamika-kathait</span></div>
+                    </a>
+                    <a class="contact-card" href="https://github.com/Anamikakathait12" target="_blank"
+                        rel="noopener">
+                        <i class="fab fa-github"></i>
+                        <div><small>GitHub</small><span>Anamikakathait12</span></div>
+                    </a>
+                    <a class="contact-card" href="https://leetcode.com/u/Anamikaaaaa31/" target="_blank"
+                        rel="noopener">
+                        <i class="fa-solid fa-code"></i>
+                        <div><small>LeetCode</small><span>Anamikaaaaa31</span></div>
+                    </a>
+                    <button class="copy-btn" id="copyEmail" type="button"><i class="fa-regular fa-copy"></i> Copy email
+                        address</button>
                 </div>
+
                 <div class="con-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your email" required>
-                        <textarea name="Message" rows="6" placeholder="your message!!"></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
+                    <form id="contactForm">
+                        <label for="cname">Your name</label>
+                        <input type="text" id="cname" name="name" placeholder="Jane Doe" required>
+                        <label for="cemail">Your email</label>
+                        <input type="email" id="cemail" name="email" placeholder="jane@company.com" required>
+                        <label for="cmsg">Message</label>
+                        <textarea id="cmsg" name="message" rows="5" placeholder="Tell me about the role or project"
+                            required></textarea>
+                        <button type="submit" class="btn btn-primary">Open in my email app</button>
+                        <p class="form-note">This opens your email app with the message ready to send.</p>
                     </form>
-                    <span id="msg"></span>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>Copyright © Anamika <i class="fa-solid fa-face-smile"></i></p>
+            <p>Copyright &copy; <span id="year">2026</span> Anamika Kathait</p>
         </div>
     </div>
 
+    <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("skill-tab");
-
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("skill-tab");
-        }
-
-
-    </script>
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu() {
-            sidemenu.style.right = "0";
-        }
-        function closemenu() {
-            sidemenu.style.right = "-200px ";
-        }
-    </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyUkqBP8gevWOzgX9lwwsh4xhplVEyEF5a5jRKNrECyHOyWjwqlyEchB5KEiMuGYHh9/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg");
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    msg.innerHTML = "Message sent Successfully!!"
-                    setTimeout(function () {
-                        msg.innerHTML = " "
-                    }, 3000)
-                    form.reset()
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
